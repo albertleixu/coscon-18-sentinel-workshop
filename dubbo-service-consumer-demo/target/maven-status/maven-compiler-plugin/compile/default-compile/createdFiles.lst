@@ -1,0 +1,3 @@
+com\alibaba\csp\sentinel\workshop\dubbo\controller\DemoController.class
+com\alibaba\csp\sentinel\workshop\dubbo\DubboConsumerApplication.class
+com\alibaba\csp\sentinel\workshop\dubbo\config\ConsumerConfig.class

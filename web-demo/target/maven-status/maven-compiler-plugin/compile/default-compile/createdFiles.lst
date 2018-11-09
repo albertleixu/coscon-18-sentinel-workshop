@@ -1,0 +1,5 @@
+com\alibaba\csp\sentinel\workshop\web\config\AopConfig.class
+com\alibaba\csp\sentinel\workshop\web\config\FilterConfig.class
+com\alibaba\csp\sentinel\workshop\web\WebApplication.class
+com\alibaba\csp\sentinel\workshop\web\controller\DemoController.class
+com\alibaba\csp\sentinel\workshop\web\service\DemoService.class

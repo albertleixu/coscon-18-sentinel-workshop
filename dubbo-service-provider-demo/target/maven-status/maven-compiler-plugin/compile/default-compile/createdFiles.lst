@@ -1,0 +1,3 @@
+com\alibaba\csp\sentinel\workshop\dubbo\DubboProviderApplication.class
+com\alibaba\csp\sentinel\workshop\dubbo\service\FooServiceImpl.class
+com\alibaba\csp\sentinel\workshop\dubbo\config\ProviderConfig.class
