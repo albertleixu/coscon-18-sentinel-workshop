@@ -2,7 +2,7 @@
 
 # COSCon'18 Sentinel Workshop
 
-欢迎参加 COSCon'18 Sentinel Workshop，我们将通过几个常见的场景帮您快速入门 [Sentinel](https://github.com/alibaba/Sentinel)。
+欢迎参加分享会，我们将通过几个常见的场景帮您快速入门 [Sentinel](https://github.com/alibaba/Sentinel)。
 [Sentinel](https://github.com/alibaba/Sentinel) 是阿里巴巴集团开源的，面向分布式服务架构的轻量级流量控制组件，主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助用户保护服务的稳定性。（欢迎 star/fork）
 
 > 注：由于现场的网络环境不是非常好，因此强烈建议您提前下载好 Sentinel 控制台 jar 包，并提前 clone 本工程解析一下 Maven 依赖。
@@ -14,7 +14,7 @@
 然后通过命令行启动 Sentinel 控制台：
 
 ```bash
-java -Dserver.port=8080 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
+java -Dserver.port=9980 -Dcsp.sentinel.dashboard.server=localhost:9980 -Dproject.name=sentinel-dashboard -jar D:\sentinel-dashboard.jar
 ```
 
 当控制台启动成功后，访问 localhost:8080 查看控制台。注意第一次访问控制台会触发 Sentinel 的初始化，因此可能会比较慢。
@@ -36,5 +36,22 @@ Workshop 共包含三个场景：
 以下是一个示例：
 
 ```bash
--Dcsp.sentinel.api.port=8723 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=web-demo
+dashboard
+java -Dserver.port=9980 -Dcsp.sentinel.dashboard.server=localhost:9980 -Dproject.name=sentinel-dashboard -jar D:\sentinel-dashboard.jar
+
+web.demo
+java -Dcsp.sentinel.api.port=8723 -Dcsp.sentinel.dashboard.server=localhost:9980 -Dproject.name=web-demo -jar D:\coscon-18-sentinel-workshop\web-demo\target\web-demo-1.0.jar
+
+http://localhost:9669/hello
+http://localhost:9669/greeting?name=xulei
+
+
+dubbo
+java -Dcsp.sentinel.api.port=8723 -Dcsp.sentinel.dashboard.server=localhost:9980 -Dproject.name=provider-demo -jar D:\coscon-18-sentinel-workshop\dubbo-service-provider-demo\target\dubbo-service-provider-demo-1.0.jar
+java -Dcsp.sentinel.api.port=8723 -Dcsp.sentinel.dashboard.server=localhost:9980 -Dproject.name=consumer-demo -jar D:\coscon-18-sentinel-workshop\dubbo-service-consumer-demo\target\dubbo-service-consumer-demo-1.0.jar
+
+http://localhost:9611/hello?name=xulei
+
+locust -f C:\Users\leixu\AppData\Local\atom\locust\test1.py --host=http://localhost:9669/hello
+
 ```
